@@ -1,11 +1,16 @@
 import Link from "next/link";
+import EventList from "../components/events/eventList";
+import { getFeaturedEvents } from "../data";
 
 export default function HomePage() {
 
+  const events = getFeaturedEvents();
+
+
   return (
     <div>
-      <h1>HomePage</h1>
-      <ul>
+      <EventList items={events} />
+      {/* <ul>
         <li>
           <Link href={'/portfolio'} >Portfolio</Link>
         </li>
@@ -18,7 +23,7 @@ export default function HomePage() {
         <li>
           <Link href={'/blog'} >Blog</Link>
         </li>
-      </ul>
+      </ul> */}
     </div>
   )
 }
